@@ -82,11 +82,28 @@
       padding: 10px 20px;
       border-radius: 6px;
       transition: background-color 0.3s ease, transform 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background: var(--gradient);
+      transition: all 0.3s ease;
     }
 
     .nav-links a:hover {
       background-color: var(--gray);
       transform: scale(1.05);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+      left: 0;
     }
 
     .hero {
@@ -123,16 +140,30 @@
     }
 
     section {
-      max-width: 900px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(41,44,119,0.08);
       margin: 4rem auto;
-      padding: 0 1.5rem;
+      padding: 2rem 1.5rem;
+      max-width: 900px;
       text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.8s ease forwards;
+      animation-delay: calc(var(--scroll-offset) * 0.1s);
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 30px rgba(41,44,119,0.12);
+      transition: all 0.3s ease;
     }
 
     section h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
       color: var(--blue);
+      display: inline-block;
     }
 
     section p {
@@ -149,6 +180,13 @@
       background-color: #fdfdfd;
     }
 
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -162,6 +200,17 @@
       .hero h1 {
         font-size: 2.2rem;
       }
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--gradient);
+      width: 0;
+      z-index: 1000;
+      transition: width 0.2s ease;
     }
   </style>
 </head>
@@ -222,8 +271,19 @@
     <p>Questions? Reach out to the TMARC team.</p>
   </section>
 
+  <div class="progress-bar"></div>
+
   <footer>
     &copy; 2025 ON-EAR. All rights reserved.
   </footer>
+
+  <script>
+  window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.querySelector('.progress-bar').style.width = scrolled + '%';
+  });
+  </script>
 </body>
 </html>

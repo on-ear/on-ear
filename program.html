@@ -83,6 +83,18 @@
       padding: 10px 20px;
       border-radius: 6px;
       transition: background-color 0.3s ease, transform 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background: var(--gradient);
+      transition: all 0.3s ease;
     }
 
     .nav-links a:hover {
@@ -90,11 +102,28 @@
       transform: scale(1.05);
     }
 
+    .nav-links a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
     main {
       max-width: 900px;
       margin: 4rem auto;
-      padding: 0 1.5rem;
+      padding: 2rem 1.5rem;
       text-align: center;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(41,44,119,0.08);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    main:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 30px rgba(41,44,119,0.12);
+      transition: all 0.3s ease;
     }
 
     h1 {
@@ -118,6 +147,24 @@
       background-color: #fdfdfd;
     }
 
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--gradient);
+      width: 0;
+      z-index: 1000;
+      transition: width 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -135,6 +182,7 @@
   </style>
 </head>
 <body>
+  <div class="progress-bar"></div>
   <header>
     <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; flex-wrap: wrap;">
       <div class="branding">
@@ -159,8 +207,16 @@
     <p>The full schedule for the Research Presentation Day will be available soon. Please check back closer to the event date!</p>
   </main>
 
-  <footer>
-    &copy; 2025 ON-EAR. All rights reserved.
+
+  <footer>    &copy; 2025 ON-EAR. All rights reserved.
   </footer>
+  <script>
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.querySelector('.progress-bar').style.width = scrolled + '%';
+    });
+  </script>
 </body>
 </html>
