@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ON-EAR | Program</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --blue: #292C77;
+      --yellow: #F9A030;
+      --gray: #f9f9f9;
+      --dark: #1a1a1a;
+      --gradient: linear-gradient(135deg, #292C77, #F9A030);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: white;
+      color: var(--dark);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 50px;
+      background-color: white;
+      border-bottom: 3px solid var(--blue);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 80px;
+      margin-right: 20px;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .site-title {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+    }
+
+    .site-title .main {
+      font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 4px;
+    }
+
+    .on { color: var(--blue); }
+    .ear { color: var(--yellow); }
+
+    .tagline {
+      font-size: 1rem;
+      color: #666;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--gray);
+      transform: scale(1.05);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
+      border-top: 1px solid #eee;
+      background-color: #fdfdfd;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        margin-top: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; flex-wrap: wrap;">
+      <div class="branding">
+        <img src="Logo_v3.png" alt="Logo" class="logo">
+        <div class="site-title">
+          <div class="main"><span class="on">ON-</span><span class="ear">EAR</span></div>
+          <p class="tagline">Ontario Network for Emerging Auditory Research</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#event">Event</a>
+        <a href="program.html">Program</a>
+        <a href="index.html#register">Register</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>2025 ON-EAR Program Schedule</h1>
+    <p>The full schedule for the Research Presentation Day will be available soon. Please check back closer to the event date!</p>
+  </main>
+
+  <footer>
+    &copy; 2025 ON-EAR. All rights reserved.
+  </footer>
+</body>
+</html>

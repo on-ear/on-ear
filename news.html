@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ON-EAR | News</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #292C77;
+      --yellow: #F9A030;
+      --gray: #f9f9f9;
+      --dark: #1a1a1a;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: white;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 50px;
+      background-color: white;
+      border-bottom: 3px solid var(--blue);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 80px;
+      margin-right: 20px;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .site-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: -10px;
+    }
+
+    .site-title .main {
+      font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 4px;
+    }
+
+    .on { color: var(--blue); }
+    .ear { color: var(--yellow); }
+
+    .tagline {
+      font-size: 1rem;
+      color: #666;
+      margin: 0;
+      margin-top: -6px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--gray);
+      transform: scale(1.05);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--blue);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .post {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1.5rem;
+    }
+
+    .post h2 {
+      color: var(--blue);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .post time {
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .post p {
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
+      border-top: 1px solid #eee;
+      background-color: #fdfdfd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; flex-wrap: wrap;">
+      <div class="branding">
+        <img src="Logo_v3.png" alt="Logo" class="logo">
+        <div class="site-title">
+          <div class="main"><span class="on">ON-</span><span class="ear">EAR</span></div>
+          <p class="tagline">Ontario Network for Emerging Auditory Research</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="program.html">Program</a>
+        <a href="index.html#event">Event</a>
+        <a href="index.html#register">Register</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="news.html">News</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Latest News & Publications</h1>
+
+    <div class="post">
+      <h2>New publication on auditory cognitive mapping</h2>
+      <time datetime="2025-07-28">July 28, 2025</time>
+      <p>Our latest paper exploring brain responses to speech-in-noise was published in the Journal of Auditory Neuroscience. Read the summary and download the full text here.</p>
+    </div>
+
+    <div class="post">
+      <h2>TMARC awarded provincial research grant</h2>
+      <time datetime="2025-06-15">June 15, 2025</time>
+      <p>The Toronto Metropolitan Auditory Research Cluster has received a major grant to support ON-EAR and related initiatives. More details inside.</p>
+    </div>
+
+    <div class="post">
+      <h2>Save the Date: ON-EAR 2025</h2>
+      <time datetime="2025-05-01">May 1, 2025</time>
+      <p>Mark your calendars: The first ON-EAR Research Day will take place on December 5, 2025, at Toronto Metropolitan University. Stay tuned for speaker announcements.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 ON-EAR. All rights reserved.
+  </footer>
+</body>
+</html>

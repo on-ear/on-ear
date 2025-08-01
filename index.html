@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ON-EAR | Ontario Network for Emerging Auditory Research</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --blue: #292C77;
+      --yellow: #F9A030;
+      --gray: #f9f9f9;
+      --dark: #1a1a1a;
+      --gradient: linear-gradient(135deg, #292C77, #F9A030);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: white;
+      color: var(--dark);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 50px;
+      background-color: white;
+      border-bottom: 3px solid var(--blue);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 80px;
+      margin-right: 20px;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .site-title {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+    }
+
+    .site-title .main {
+      font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 4px;
+    }
+
+    .on { color: var(--blue); }
+    .ear { color: var(--yellow); }
+
+    .tagline {
+      font-size: 1rem;
+      color: #666;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--gray);
+      transform: scale(1.05);
+    }
+
+    .hero {
+      background: var(--gradient);
+      padding: 4rem 2rem;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .button {
+      background-color: var(--yellow);
+      color: var(--dark);
+      padding: 14px 30px;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #e18d00;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--blue);
+    }
+
+    section p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
+      border-top: 1px solid #eee;
+      background-color: #fdfdfd;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        margin-top: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; flex-wrap: wrap;">
+      <div class="branding">
+        <img src="Logo_v3.png" alt="Logo" class="logo">
+        <div class="site-title">
+          <div class="main"><span class="on">ON-</span><span class="ear">EAR</span></div>
+          <p class="tagline">Ontario Network for Emerging Auditory Research</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#event">Event</a>
+        <a href="program.html">Program</a>
+        <a href="#register">Register</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>Welcome to ON-EAR</h1>
+    <p>A dynamic network connecting Ontario’s brightest minds in hearing, sound, and auditory science.</p>
+    <a href="#register" class="button">Join the 2025 Research Day</a>
+  </div>
+
+  <section id="about">
+    <h2>About ON-EAR</h2>
+    <p>
+      ON-EAR is a new initiative created to connect and showcase the growing body of auditory research in Ontario. Building on the Toronto Auditory Research Group (TARG) and organized by the Toronto Metropolitan Auditory Research Cluster (TMARC), our goal is to foster collaboration, knowledge exchange, and community among auditory scientists and trainees across the province.
+    </p>
+  </section>
+
+  <section id="event">
+    <h2>2025 ON-EAR Research Presentation Day</h2>
+    <p><strong>Date:</strong> December 5, 2025<br>
+    <strong>Location:</strong> Toronto Metropolitan University<br>
+    <strong>Theme:</strong> Auditory Neuroscience Today: Sound, Speech, and the Brain</p>
+    <p>
+      We welcome short talks from faculty and postdocs, and posters from trainees. We prioritize new research, early-career scholars, and bold new methods that push auditory science forward.
+    </p>
+  </section>
+
+  <section id="register">
+    <h2>Register to Attend</h2>
+    <p>
+      Be part of ON-EAR’s inaugural event. Share your work, meet other researchers, and discover what’s happening in auditory neuroscience across Ontario.
+    </p>
+    <a href="https://ryersonpsych.co1.qualtrics.com/jfe/form/SV_bdPdPlDSpY1zjmK" class="button" target="_blank">Register Now</a>
+    <p><strong>Deadline:</strong> September 1, 2025</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Questions? Reach out to the TMARC team.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 ON-EAR. All rights reserved.
+  </footer>
+</body>
+</html>
