@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - ON-EAR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #292C77;
+            --yellow: #F9A030;
+            --gray: #f9f9f9;
+            --dark: #1a1a1a;
+            --gradient: linear-gradient(135deg, #292C77, #F9A030);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--gray);
+            color: var(--dark);
+        }
+
+        .header {
+            background: var(--gradient);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .message-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(41,44,119,0.08);
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--yellow);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: opacity 0.3s;
+        }
+
+        .button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Thank You!</h1>
+    </div>
+    <div class="container">
+        <div class="message-card">
+            <h2>Registration Successful</h2>
+            <p>Thank you for your interest in ON-EAR 2025.</p>
+            <a href="index.html" class="button">Return to Homepage</a>
+        </div>
+    </div>
+</body>
+</html>

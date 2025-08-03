@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - ON-EAR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #292C77;
+            --yellow: #F9A030;
+            --gray: #f9f9f9;
+            --dark: #1a1a1a;
+            --gradient: linear-gradient(135deg, #292C77, #F9A030);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--gray);
+            color: var(--dark);
+        }
+
+        .header {
+            background: var(--gradient);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .form-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(41,44,119,0.08);
+        }
+
+        h1 {
+            color: var(--blue);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+
+        button {
+            background: var(--gradient);
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: opacity 0.3s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .info-text {
+            background: var(--gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Register for ON-EAR 2025</h1>
+        <p>Join us this November in Toronto</p>
+    </div>
+    <div class="container">
+        <div class="form-card">
+            <form 
+                action="https://formspree.io/f/xdkdlybw" 
+                method="POST"
+                onsubmit="submitForm(event)"
+            >
+                <!-- Remove the _next input as we'll handle redirect in JavaScript -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="New ON-EAR Registration">
+
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="institution">Institution *</label>
+                    <input type="text" id="institution" name="institution" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Role *</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select your role</option>
+                        <option value="faculty">Faculty</option>
+                        <option value="postdoc">Postdoc</option>
+                        <option value="graduate">Graduate Student</option>
+                        <option value="undergraduate">Undergraduate Student</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="presentation">Are you planning to submit a presentation? *</label>
+                    <select id="presentation" name="presentation" required>
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="presentationInfo" style="display: none;">
+                    <div id="facultyPostdocInfo" style="display: none;">
+                        <p class="info-text">We anticipate having space for approximately 12 research talks. Talks will be prioritized for researchers, though if space allows, a few students may be contacted to present a talk. If we receive more submissions than we can accommodate, we may need to prioritize based on fit with the conference theme and balance across institutions. At this stage, no abstract is required, but we may reach out later to request a short description for the event program.</p>
+                        <label for="talkTitle">Tentative Title of Your Talk *</label>
+                        <input type="text" id="talkTitle" name="talkTitle">
+                    </div>
+                    
+                    <div id="studentInfo" style="display: none;">
+                        <p class="info-text">We anticipate having space for approximately 20 posters. Posters will primarily be allocated to students. If we receive more submissions than we can accommodate, we may need to prioritize based on fit with the conference theme and balance across institutions. At this stage, no abstract is required, but we may contact you later to provide a short description for the event program.</p>
+                        <label for="posterTitle">Tentative Title of Your Poster *</label>
+                        <input type="text" id="posterTitle" name="posterTitle">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dietary">Do you have any dietary restrictions?</label>
+                    <textarea id="dietary" name="dietary" rows="2"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="accessibility">Do you have any accessibility needs you'd like us to be aware of?</label>
+                    <textarea id="accessibility" name="accessibility" rows="2"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="mailingList" name="mailingList">
+                        Would you like to join the ON-EAR mailing list for future updates?
+                    </label>
+                </div>
+
+                <button type="submit">Submit Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const roleSelect = document.getElementById('role');
+        const presentationSelect = document.getElementById('presentation');
+        const presentationInfo = document.getElementById('presentationInfo');
+        const facultyPostdocInfo = document.getElementById('facultyPostdocInfo');
+        const studentInfo = document.getElementById('studentInfo');
+        const talkTitle = document.getElementById('talkTitle');
+        const posterTitle = document.getElementById('posterTitle');
+
+        function updatePresentationFields() {
+            const role = roleSelect.value;
+            const isPresenting = presentationSelect.value === 'yes';
+            
+            presentationInfo.style.display = isPresenting ? 'block' : 'none';
+            
+            if (isPresenting) {
+                if (role === 'faculty' || role === 'postdoc') {
+                    facultyPostdocInfo.style.display = 'block';
+                    studentInfo.style.display = 'none';
+                    talkTitle.required = true;
+                    posterTitle.required = false;
+                } else {
+                    facultyPostdocInfo.style.display = 'none';
+                    studentInfo.style.display = 'block';
+                    talkTitle.required = false;
+                    posterTitle.required = true;
+                }
+            } else {
+                facultyPostdocInfo.style.display = 'none';
+                studentInfo.style.display = 'none';
+                talkTitle.required = false;
+                posterTitle.required = false;
+            }
+        }
+
+        roleSelect.addEventListener('change', updatePresentationFields);
+        presentationSelect.addEventListener('change', updatePresentationFields);
+
+        function submitForm(e) {
+            e.preventDefault();
+            const form = e.target;
+            const data = new FormData(form);
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Update to use absolute file path for local testing
+                    window.location.href = 'file:///Users/maximeperron/Desktop/on-ear%202/thank-you.html';
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                alert('Sorry, there was an error submitting your registration. Please try again.');
+                console.error(error);
+            });
+        }
+    </script>
+</body>
+</html>
