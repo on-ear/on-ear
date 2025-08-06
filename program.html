@@ -5,9 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ON-EAR | Program</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Location section will be moved below header -->
   <style>
     * {
       box-sizing: border-box;
+    }
+    .location-section {
+      width: 100%;
+      background: #fff;
+      padding: 3rem 0 2rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      /* border-bottom: 3px solid var(--blue); */
+    }
+    .location-content {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+      width: 100%;
+      justify-content: center;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(41,44,119,0.13);
+      padding: 2.5rem 2rem;
+      transition: box-shadow 0.3s, border 0.3s;
+      border: 4px solid;
+      border-image: linear-gradient(120deg, #F9A030, #292C77, #F9A030) 1;
+      /* animation: floatCard 3s ease-in-out infinite; */
+    }
+    /* @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    } */
+    .location-content:hover {
+      box-shadow: 0 16px 48px rgba(41,44,119,0.22);
+      border-image: linear-gradient(120deg, #292C77, #F9A030, #292C77) 1;
+    }
+    .location-img {
+      width: 240px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(41,44,119,0.18), 0 0 32px 4px #F9A03033;
+      background: #eee;
+      border: 4px solid #fff;
+      position: relative;
+      z-index: 1;
+    }
+    .location-info {
+      flex: 1;
+      text-align: left;
+      padding-left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .location-info h2 {
+      margin-top: 0;
+      color: var(--blue);
+      font-size: 1.7rem;
+      margin-bottom: 0.7rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    .location-info p {
+      font-size: 1.08rem;
+      color: #333;
+      margin: 0;
+      line-height: 1.7;
+      font-weight: 500;
+    .location-info a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      background: linear-gradient(90deg, #F9A030 0%, #292C77 100%);
+      color: #fff !important;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 0.5em 1.2em;
+      box-shadow: 0 2px 12px rgba(41,44,119,0.10);
+      transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+      border: none;
+      font-size: 1em;
+      margin-top: 0.7em;
+    }
+    .location-info a:hover {
+      background: linear-gradient(90deg, #292C77 0%, #F9A030 100%);
+      box-shadow: 0 4px 24px rgba(41,44,119,0.18);
+      transform: scale(1.07);
+      color: #fff;
+    }
+    .location-info a .map-icon {
+      display: inline-block;
+      width: 1.1em;
+      height: 1.1em;
+      background: url('data:image/svg+xml;utf8,<svg fill="%23fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>') no-repeat center center;
+      background-size: contain;
+    }
+    }
+    }
+    @media (max-width: 768px) {
+      .location-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        padding: 1.2rem 0.5rem;
+      }
+      .location-img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin-bottom: 1rem;
+      }
+      .location-info {
+        padding-left: 0;
+        text-align: center;
+      }
     }
 
     :root {
@@ -201,6 +319,18 @@
     </div>
   </header>
 
+  <section class="location-section">
+    <div class="location-content">
+      <img src="CIUTMU.jpg" alt="Centre for Urban Innovation, TMU" class="location-img">
+      <div class="location-info">
+        <h2>Location</h2>
+        <p><strong>Centre for Urban Innovation</strong><br>
+        Toronto Metropolitan University<br>
+        44 Gerrard St E, Toronto, ON M5B 1G3<br>
+        <a href="https://www.google.com/maps/place/44+Gerrard+St+E,+Toronto,+ON+M5B+1W7/@43.6598316,-79.382323,17z/data=!3m1!4b1!4m6!3m5!1s0x89d4cb4acf49d9d7:0x194eefedbcff4054!8m2!3d43.6598277!4d-79.3797427!16s%2Fg%2F1yfdrvpm5?entry=ttu&g_ep=EgoyMDI1MDgwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank"><span class="map-icon"></span>View on Map</a></p>
+      </div>
+    </div>
+  </section>
   <main>
     <h1>2025 ON-EAR Program Schedule</h1>
     <p>The full schedule for the Research Presentation Day will be available soon. Please check back closer to the event date!</p>
