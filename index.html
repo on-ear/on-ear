@@ -16,6 +16,7 @@
       --gray: #f9f9f9;
       --dark: #1a1a1a;
       --gradient: linear-gradient(135deg, #292C77, #F9A030);
+      --section-bg: #fff;
     }
 
     body {
@@ -125,18 +126,33 @@
     }
 
     .button {
-      background-color: var(--yellow);
-      color: var(--dark);
+      background: linear-gradient(90deg, #292C77 0%, #4f5bd5 100%);
+      color: #fff;
       padding: 14px 30px;
       text-decoration: none;
       font-weight: 600;
       border-radius: 8px;
       font-size: 1rem;
-      transition: background-color 0.3s;
+      box-shadow: 0 2px 12px rgba(41,44,119,0.10);
+      transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+      border: none;
+      display: inline-block;
     }
-
+    .button.hero-btn {
+      background: linear-gradient(90deg, #F9A030 0%, #e18d00 100%);
+      color: var(--dark);
+    }
+    .button.hero-btn:hover {
+      background: linear-gradient(90deg, #e18d00 0%, #F9A030 100%);
+      color: var(--dark);
+      box-shadow: 0 4px 24px rgba(249,160,48,0.18);
+      transform: scale(1.05);
+    }
     .button:hover {
-      background-color: #e18d00;
+      background: linear-gradient(90deg, #4f5bd5 0%, #292C77 100%);
+      box-shadow: 0 4px 24px rgba(41,44,119,0.18);
+      transform: scale(1.05);
+      color: #fff;
     }
 
     section {
@@ -236,7 +252,7 @@
   <div class="hero">
     <h1>Welcome to ON-EAR</h1>
     <p>A dynamic network connecting Ontario’s brightest minds in hearing, sound, and auditory science.</p>
-    <a href="#register" class="button">Join the 2025 Research Day</a>
+    <a href="#register" class="button hero-btn">Join the 2025 Research Day</a>
   </div>
 
   <section id="about">
@@ -254,6 +270,7 @@
     <p>
       We welcome short talks from faculty and postdocs, and posters from trainees. We prioritize new research, early-career scholars, and bold new methods that push auditory science forward.
     </p>
+    <a href="program.html" class="button" style="margin-top:1.2rem;display:inline-block;">View Program Details</a>
   </section>
 
   <section id="register">

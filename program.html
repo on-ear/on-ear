@@ -7,6 +7,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Location section will be moved below header -->
   <style>
+    .button {
+      background: linear-gradient(90deg, #292C77 0%, #4f5bd5 100%);
+      color: #fff;
+      padding: 14px 30px;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-shadow: 0 2px 12px rgba(41,44,119,0.10);
+      transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+      border: none;
+      display: inline-block;
+    }
+    .button.hero-btn {
+      background: linear-gradient(90deg, #F9A030 0%, #e18d00 100%);
+      color: var(--dark);
+    }
+    .button.hero-btn:hover {
+      background: linear-gradient(90deg, #e18d00 0%, #F9A030 100%);
+      color: var(--dark);
+      box-shadow: 0 4px 24px rgba(249,160,48,0.18);
+      transform: scale(1.05);
+    }
+    .button:hover {
+      background: linear-gradient(90deg, #4f5bd5 0%, #292C77 100%);
+      box-shadow: 0 4px 24px rgba(41,44,119,0.18);
+      transform: scale(1.05);
+      color: #fff;
+    }
     * {
       box-sizing: border-box;
     }
@@ -334,6 +363,7 @@
   <main>
     <h1>2025 ON-EAR Program Schedule</h1>
     <p>The full schedule for the Research Presentation Day will be available soon. Please check back closer to the event date!</p>
+     <a href="register.html" class="button" style="margin-bottom:2rem;">Join the 2025 Research Day</a>
   </main>
 
 
