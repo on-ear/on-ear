@@ -4,389 +4,90 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ON-EAR | Program</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Location section will be moved below header -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#292C77">
   <style>
-    .button {
-      background: linear-gradient(90deg, #292C77 0%, #4f5bd5 100%);
-      color: #fff;
-      padding: 14px 30px;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 8px;
-      font-size: 1rem;
-      box-shadow: 0 2px 12px rgba(41,44,119,0.10);
-      transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
-      border: none;
-      display: inline-block;
-    }
-    .button.hero-btn {
-      background: linear-gradient(90deg, #F9A030 0%, #e18d00 100%);
-      color: var(--dark);
-    }
-    .button.hero-btn:hover {
-      background: linear-gradient(90deg, #e18d00 0%, #F9A030 100%);
-      color: var(--dark);
-      box-shadow: 0 4px 24px rgba(249,160,48,0.18);
-      transform: scale(1.05);
-    }
-    .button:hover {
-      background: linear-gradient(90deg, #4f5bd5 0%, #292C77 100%);
-      box-shadow: 0 4px 24px rgba(41,44,119,0.18);
-      transform: scale(1.05);
-      color: #fff;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    .location-section {
-      width: 100%;
-      background: #fff;
-      padding: 3rem 0 2rem 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      /* border-bottom: 3px solid var(--blue); */
-    }
-    .location-content {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-      max-width: 700px;
-      margin: 0 auto;
-      width: 100%;
-      justify-content: center;
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 8px 32px rgba(41,44,119,0.13);
-      padding: 2.5rem 2rem;
-      transition: box-shadow 0.3s, border 0.3s;
-      border: 4px solid;
-      border-image: linear-gradient(120deg, #F9A030, #292C77, #F9A030) 1;
-      /* animation: floatCard 3s ease-in-out infinite; */
-    }
-    /* @keyframes floatCard {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    } */
-    .location-content:hover {
-      box-shadow: 0 16px 48px rgba(41,44,119,0.22);
-      border-image: linear-gradient(120deg, #292C77, #F9A030, #292C77) 1;
-    }
-    .location-img {
-      width: 240px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(41,44,119,0.18), 0 0 32px 4px #F9A03033;
-      background: #eee;
-      border: 4px solid #fff;
-      position: relative;
-      z-index: 1;
-    }
-    .location-info {
-      flex: 1;
-      text-align: left;
-      padding-left: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .location-info h2 {
-      margin-top: 0;
-      color: var(--blue);
-      font-size: 1.7rem;
-      margin-bottom: 0.7rem;
-      letter-spacing: 1px;
-      font-weight: 700;
-    }
-    .location-info p {
-      font-size: 1.08rem;
-      color: #333;
-      margin: 0;
-      line-height: 1.7;
-      font-weight: 500;
-    .location-info a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5em;
-      background: linear-gradient(90deg, #F9A030 0%, #292C77 100%);
-      color: #fff !important;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 8px;
-      padding: 0.5em 1.2em;
-      box-shadow: 0 2px 12px rgba(41,44,119,0.10);
-      transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
-      border: none;
-      font-size: 1em;
-      margin-top: 0.7em;
-    }
-    .location-info a:hover {
-      background: linear-gradient(90deg, #292C77 0%, #F9A030 100%);
-      box-shadow: 0 4px 24px rgba(41,44,119,0.18);
-      transform: scale(1.07);
-      color: #fff;
-    }
-    .location-info a .map-icon {
-      display: inline-block;
-      width: 1.1em;
-      height: 1.1em;
-      background: url('data:image/svg+xml;utf8,<svg fill="%23fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>') no-repeat center center;
-      background-size: contain;
-    }
-    }
-    }
-    @media (max-width: 768px) {
-      .location-content {
-        flex-direction: column !important;
-        gap: 0.8rem !important;
-        text-align: center !important;
-        padding: 0.8rem 0.3rem !important;
-        box-shadow: 0 4px 16px rgba(41,44,119,0.10);
-      }
-      .location-img {
-        width: 90vw !important;
-        max-width: 320px !important;
-        height: auto !important;
-        margin-bottom: 0.7rem !important;
-        border-radius: 14px !important;
-      }
-      .location-info {
-        padding-left: 0 !important;
-        text-align: center !important;
-        font-size: 1rem !important;
-      }
-      .location-info h2 {
-        font-size: 1.3rem !important;
-        margin-bottom: 0.4rem !important;
-      }
-      .location-info p {
-        font-size: 0.98rem !important;
-        line-height: 1.5 !important;
-      }
-    }
-
-    :root {
-      --blue: #292C77;
-      --yellow: #F9A030;
-      --gray: #f9f9f9;
-      --dark: #1a1a1a;
-      --gradient: linear-gradient(135deg, #292C77, #F9A030);
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: white;
-      color: var(--dark);
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 30px 50px;
-      background-color: white;
-      border-bottom: 3px solid var(--blue);
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      height: 80px;
-      margin-right: 20px;
-    }
-
-    .branding {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .site-title {
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-      padding: 0;
-    }
-
-    .site-title .main {
-      font-family: "Arial Rounded MT Bold", Arial, sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 4px;
-    }
-
-    .on { color: var(--blue); }
-    .ear { color: var(--yellow); }
-
-    .tagline {
-      font-size: 1rem;
-      color: #666;
-      margin: 0;
-      line-height: 1.2;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--blue);
-      font-weight: 600;
-      padding: 10px 20px;
-      border-radius: 6px;
-      transition: background-color 0.3s ease, transform 0.2s;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 50%;
-      background: var(--gradient);
-      transition: all 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      background-color: var(--gray);
-      transform: scale(1.05);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-      left: 0;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 4rem auto;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(41,44,119,0.08);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 0.8s ease forwards;
-    }
-
-    main:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 30px rgba(41,44,119,0.12);
-      transition: all 0.3s ease;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--blue);
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-      color: #444;
-    }
-
-    footer {
-      text-align: center;
-      color: #888;
-      padding: 3rem 1rem;
-      font-size: 0.9rem;
-      border-top: 1px solid #eee;
-      background-color: #fdfdfd;
-    }
-
-    .progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      background: var(--gradient);
-      width: 0;
-      z-index: 1000;
-      transition: width 0.2s ease;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        margin-top: 1rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-    }
+    :root { --blue:#292C77; --yellow:#F9A030; --ink:#11131a; --muted:#5f667a; --bg:#ffffff; --soft:#f7f8fb; --border:#e8eaf1; --radius:18px; --shadow:0 8px 24px rgba(17,19,26,0.06); --shadow-strong:0 16px 42px rgba(17,19,26,0.10); --gradient:linear-gradient(135deg,#292C77 0%,#F9A030 100%); }
+    *{box-sizing:border-box;} html,body{height:100%;}
+    body{margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:radial-gradient(1200px 600px at 10% -10%, #eef0ff 0%, transparent 55%),radial-gradient(900px 500px at 110% 0%, #fff6e6 0%, transparent 60%),var(--bg);overflow-x:hidden;scroll-behavior:smooth;}
+    .container{width:min(1200px,92vw);margin:0 auto;position:relative;z-index:1;}
+    header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,0.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);transition:box-shadow .2s ease;}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px;}
+    .branding{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;}
+    .logo img{height:56px;width:auto;display:block;border-radius:10px;box-shadow:0 4px 14px rgba(17,19,26,0.08);}
+    .title{display:grid;}
+    .title .name{font-weight:800;letter-spacing:.2px;font-size:1.55rem;line-height:1.05;}
+    .on{color:var(--blue);} .ear{color:var(--yellow);} .tag{color:var(--muted);font-size:.95rem;}
+    nav{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+    nav a{position:relative;text-decoration:none;color:var(--blue);font-weight:600;padding:10px 14px;border-radius:12px;}
+    nav a::after{content:"";position:absolute;left:50%;right:50%;bottom:6px;height:2px;background:var(--gradient);transition:left .2s,right .2s;}
+    nav a:hover{background:#eef0ff;} nav a:hover::after,nav a.active::after{left:14px;right:14px;}
+    .progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--gradient);z-index:60;box-shadow:0 2px 20px rgba(249,160,48,0.25);}    
+    .btn{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--border);cursor:pointer;padding:13px 18px;border-radius:14px;font-weight:700;font-size:1rem;text-decoration:none;transition:transform 120ms ease,box-shadow 200ms ease,filter 120ms ease;}
+    .btn-primary{background:#F9A030;color:#1a1a1a;box-shadow:var(--shadow);} .btn-primary:hover{background:#e18d00;transform:translateY(-1px);box-shadow:var(--shadow-strong);}
+    .btn-ghost{background:#fff;color:var(--blue);box-shadow:var(--shadow);} .btn-ghost:hover{transform:translateY(-1px);box-shadow:var(--shadow-strong);}    
+    section.block{padding:70px 0;}
+    .card{position:relative;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px;color:#2b3150;box-shadow:var(--shadow);overflow:hidden;}
+    .card h2{display:inline-flex;align-items:center;gap:10px;margin:0 0 12px;font-size:clamp(1.6rem,2.8vw,2rem);color:var(--blue);} .card h2::before{content:"";height:10px;width:28px;border-radius:6px;background:var(--gradient);} .card p{font-size:1.05rem;line-height:1.7;}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+    /* Location composite card */
+    .location-wrap{display:grid;grid-template-columns:260px 1fr;gap:26px;align-items:center;}
+    .location-wrap img{width:100%;height:180px;object-fit:cover;border-radius:16px;box-shadow:0 4px 20px rgba(17,19,26,0.15),0 0 28px 4px #F9A03033;border:4px solid #fff;}
+    .location-wrap a.map{display:inline-flex;align-items:center;gap:8px;margin-top:12px;background:var(--gradient);color:#fff;text-decoration:none;font-weight:600;border-radius:10px;padding:8px 14px;box-shadow:var(--shadow);font-size:.9rem;}
+    .location-wrap a.map:hover{filter:brightness(1.05);box-shadow:var(--shadow-strong);}
+    @media(max-width:900px){.grid-2{grid-template-columns:1fr;} .location-wrap{grid-template-columns:1fr;}}
+    @media(max-width:600px){section.block{padding:56px 0;} .card{padding:22px;} .location-wrap img{height:200px;} .title .name{font-size:1.4rem;}}
+    footer{text-align:center;color:#677084;padding:40px 1rem;font-size:.95rem;border-top:1px solid var(--border);background:#fff;}
   </style>
 </head>
 <body>
-  <div class="progress-bar"></div>
+  <div id="progress" class="progress" aria-hidden="true"></div>
   <header>
-<a href="index.html" style="text-decoration: none;" class="branding">
-  <img src="Logo_v3.png" alt="Logo" class="logo">
-  <div class="site-title">
-    <div class="main"><span class="on">ON-</span><span class="ear">EAR</span></div>
-    <p class="tagline">Ontario Network for Emerging Auditory Research</p>
-  </div>
-</a>
-      <nav class="nav-links">
+    <div class="container header-inner">
+      <a href="index.html" class="branding" aria-label="ON-EAR home">
+        <div class="logo"><img src="Logo_v3.png" alt="ON-EAR logo"></div>
+        <div class="title"><div class="name"><span class="on">ON-</span><span class="ear">EAR</span></div><div class="tag">Ontario Network for Emerging Auditory Research</div></div>
+      </a>
+      <nav aria-label="Primary">
         <a href="index.html#about">About</a>
         <a href="index.html#event">Event</a>
-        <a href="program.html">Program</a>
+        <a href="program.html" class="active">Program</a>
         <a href="index.html#register">Register</a>
         <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
-
-  <section class="location-section">
-    <div class="location-content">
-      <img src="CIUTMU.jpg" alt="Centre for Urban Innovation, TMU" class="location-img">
-      <div class="location-info">
-        <h2>Location</h2>
-        <p><strong>Centre for Urban Innovation</strong><br>
-        Toronto Metropolitan University<br>
-        44 Gerrard St E, Toronto, ON M5B 1G3<br>
-        <a href="https://www.google.com/maps/place/44+Gerrard+St+E,+Toronto,+ON+M5B+1W7/@43.6598316,-79.382323,17z/data=!3m1!4b1!4m6!3m5!1s0x89d4cb4acf49d9d7:0x194eefedbcff4054!8m2!3d43.6598277!4d-79.3797427!16s%2Fg%2F1yfdrvpm5?entry=ttu&g_ep=EgoyMDI1MDgwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank"><span class="map-icon"></span>View on Map</a></p>
-      </div>
+  <!-- Program Intro -->
+  <section class="block" id="program-intro">
+    <div class="container">
+      <article class="card">
+        <h2>2025 Program Schedule</h2>
+        <p>The full schedule for the ON-EAR Research Presentation Day will be posted here once talk and poster titles are finalized. Please check back closer to the event date.</p>
+        <a href="register.html" class="btn btn-primary" style="margin-top:4px;">Join the 2025 Research Day</a>
+        <p style="margin-top:18px;font-size:.9rem;color:var(--muted);">Have a proposed talk or poster? Be sure to include the title when you register.</p>
+      </article>
     </div>
   </section>
-  <main>
-    <h1>2025 ON-EAR Program Schedule</h1>
-    <p>The full schedule for the Research Presentation Day will be available soon. Please check back closer to the event date!</p>
-     <a href="register.html" class="button" style="margin-bottom:2rem;">Join the 2025 Research Day</a>
-  </main>
-
-
-  <footer>    &copy; 2025 ON-EAR. All rights reserved.
+  <!-- Location -->
+  <section class="block" id="location">
+    <div class="container">
+      <article class="card">
+        <h2>Location</h2>
+        <div class="location-wrap">
+          <img src="CIUTMU.jpg" alt="Centre for Urban Innovation, TMU">
+          <div>
+            <p style="margin-top:0;"><strong>Centre for Urban Innovation</strong><br>Toronto Metropolitan University<br>44 Gerrard St E<br>Toronto, ON M5B 1G3</p>
+            <a class="map" href="https://www.google.com/maps/place/44+Gerrard+St+E,+Toronto,+ON+M5B+1W7/@43.6598316,-79.382323,17z/data=!3m1!4b1!4m6!3m5!1s0x89d4cb4acf49d9d7:0x194eefedbcff4054!8m2!3d43.6598277!4d-79.3797427!16s%2Fg%2F1yfdrvpm5?entry=ttu" target="_blank" rel="noopener">View on Map</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <footer>
+    <div class="container">&copy; 2025 ON-EAR. All rights reserved.</div>
   </footer>
   <script>
-    window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.querySelector('.progress-bar').style.width = scrolled + '%';
-    });
+    const progress=document.getElementById('progress');const headerEl=document.querySelector('header');window.addEventListener('scroll',()=>{const st=document.documentElement.scrollTop||document.body.scrollTop;const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;progress.style.width=Math.min(100,(st/h)*100)+'%';headerEl.style.boxShadow=st>6?'0 6px 24px rgba(17,19,26,0.08)':'none';});
   </script>
 </body>
 </html>
